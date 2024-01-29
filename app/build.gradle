@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        applicationId "com.cloudpos.paymenttransdemo"
+        minSdkVersion 19
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
+}
+dependencies {
+    implementation(name:'cloudpossdkV1.6.1.5_Standard',ext:'aar')
+    implementation 'com.android.support:support-v4:26+'
+//    compile files('libs/cloudpossdkinterface.jar')
+}
